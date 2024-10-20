@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../css/style_login.css">
+    <title>Login</title>
+</head>
+<body>
+    <div class="background-image"></div>
+    <div class="login-container">
+        <h2>Iniciar Sesión</h2>
+        <form id="formLogin">
+            <input type="text" name="loginUsername" placeholder="Correo electronico" required>
+            <input type="password" name="loginPassword" placeholder="Contraseña" required>
+            <button type="submit">Ingresar</button>
+            
+        </form>
+        <a href="../html/sala.html"> <i class='bx bx-log-out-circle bx-fade-left' style='color:#118704'  ></i></a>
+    </div>
+
+    <script>
+        document.getElementById("formLogin").addEventListener("submit", function(event) {
+            event.preventDefault();
+            let savedUser = JSON.parse(localStorage.getItem("user"));
+            let inputEmail = document.getElementById("loginUsername").value;
+            let inputPassword = document.getElementById("loginPassword").value;
+
+            if (savedUser && savedUser.email === inputEmail && savedUser.password === inputPassword) {
+                alert("Login exitoso!");
+                // Aquí puedes redirigir a la página de usuario o dashboard
+                window.location.href = "ingreso.html"; // Ejemplo de redirección
+            } else {
+                alert("Usuario o contraseña incorrectos!");
+            }
+        });
+    </script>
+</body>
+</html>

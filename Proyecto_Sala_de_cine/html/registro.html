@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style_registro.css">
+    <title>Registro</title>
+</head>
+<body>
+    <div class="background-image"></div>
+     <div class="registro-container container mt-5"> <!--el container centra y limita el ancho del contenido; el mt-5 añade una margan superior -->
+        <section class="crud">
+            <h2 class="crud_title text-center"><b>Registro</b></h2><!--text-center: para centrar el texto-->
+            <form id="formRegistro" class="crud_form">
+                <div class="form-group"> <!--form-group: para agregar lo elementos del formulario-->
+                    <label for="nombreInput" class="h6"><b>Nombres</b></label>
+                    <input type="text" placeholder="Nombres" id="nombreInput" class="form-control" required> <!--form-control: estilos consistentes a los campos del formulario-->
+                </div>
+                <div class="form-group">
+                    <label for="apellidoInput" class="h6"><b>Apellidos</b></label>
+                    <input type="text" placeholder="Apellidos" id="apellidoInput" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="emailInput" class="h6"><b>Correo Electrónico</b></label>
+                    <input type="email" placeholder="Correo" id="emailInput" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="dateInput" class="h6"><b>Fecha de Nacimiento</b></label>
+                    <input type="date" placeholder="date" id="dateInput" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="edadInput" class="h6"><b>Edad</b></label>
+                    <input type="number" placeholder="Edad" id="edadInput" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="numberInput" class="h6"><b>Teléfono</b></label>
+                    <input type="text" placeholder="Numero de Telefono" id="numberInput" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="passwordInput" class="h6"><b>Contraseña</b></label>
+                    <input type="password" placeholder="Password" id="passwordInput" class="form-control" minlength="8" maxlength="20" required>
+                </div>
+                <button type="submit" id="submitButton" class="btn btn-primary btn-block">Registrarse</button>
+            </form>
+        </section>
+    </div>
+    
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    
+    <script>
+        document.getElementById("formRegistro").addEventListener("submit", function(event) {
+            event.preventDefault();
+            let user = {
+                nombre: document.getElementById("nombreInput").value,
+                apellido: document.getElementById("apellidoInput").value,
+                email: document.getElementById("emailInput").value,
+                fechaNacimiento: document.getElementById("dateInput").value,
+                edad: document.getElementById("edadInput").value,
+                telefono: document.getElementById("numberInput").value,
+                password: document.getElementById("passwordInput").value,
+            };
+            localStorage.setItem("user", JSON.stringify(user));
+            alert("Registro exitoso!");
+            window.location.href = "../html/login.html"; // Redirige al login
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.encabezado {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.encabezado h1 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.encabezado a{
+    color: black;
+}
+
+.iconos {
+    display: flex; /*permite alinear y distribuir espacio entre los elementos hijos (íconos)*/
+    align-items: center; /*Alinea los elementos hijos en el eje vertical (centrado verticalmente) dentro del contenedor flex.*/
+    gap: 10px;/*Añade un espacio de 10 píxeles entre cada uno de los elementos hijos.*/
+    font-size: 2em; /* Ajusta el tamaño de los iconos al tamaño del h1 */
+}
+
+.Fondo {
+    display: block;
+    width: 100%;
+    height: auto;
+}

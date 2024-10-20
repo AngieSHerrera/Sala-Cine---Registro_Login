@@ -1,0 +1,60 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    overflow: auto;
+    display: auto;
+    justify-content: center;
+    align-items: center;
+    
+}
+.registro-container{
+    height: 100%;
+    width: 100%; /*Ancho*/
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 12px;/*Bordes redondeados */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);/*Sombra sutil para dar profundidad.*/
+    z-index: 1;
+}
+.encabezado {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+}
+
+.encabezado h1 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.iconos a {
+    margin-left: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+.carousel-inner .col-6 {
+    padding: 0;
+}
+.carousel-inner img {
+    width: 100%;
+    height: auto;
+}
+
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: url('../img/Fondo\ 2.jpg') no-repeat center center/cover;
+    filter: blur(3px);
+    z-index: -1;
+}
